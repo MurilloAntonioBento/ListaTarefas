@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"/>
+
+  <link rel="stylesheet" href="style.css">
+  <title>tomake</title>
+</head>
+<body>
+  
+  <header>
+    <p>to<span>make</span></p>
+  </header>
+  <main>
+    <section class="add">
+      <form id="form">
+        <input type="text" name="add-tarefa" id="add-tarefa" placeholder="Adicione uma nova tarefa">
+        <button type="submit"><span class="btn-text">Criar</span><i class="ph ph-plus-circle"></i></button>
+      </form>
+    </section>
+    <section class="main-tarefas">
+      <div class="content">
+        <div class="tarefas-criadas">
+          <p id="criadas-nome">Tarefas criadas</p>
+          <p id="qntd-tarefas">0</p>
+        </div>
+        <div class="tarefas-concluidas">
+          <p id="concluidas-nome">Concluídas</p>
+          <p id="qntd-concluidas">0</p>
+        </div>
+      </div>
+      <div class="horizontal-line">
+        <hr>
+      </div>
+    </section>
+    <section class="sem-tarefas">
+      <div class="content">
+        <i class="ph ph-clipboard-text"></i>
+        <p><span>Você ainda não tem tarefas cadastradas</span></p>
+        <p>Crie tarefas e organize seus itens a fazer</p>
+      </div>
+    </section>
+    <section class="tarefas">
+      <div class="content">
+        <ul>
+          
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

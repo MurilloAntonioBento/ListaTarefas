@@ -1,0 +1,372 @@
+* {
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  --gray-100: #F0EDF2;
+  --gray-200: #E5E2E9;
+  --gray-330: #E0DCE4;
+  --gray-400: #D1CBD7;
+  --gray-500: #6B6572;
+  --gray-600: #262428;
+  --purple-light: #DDD2EF;
+  --purple-base: #9359F3;
+  --purple-dark: #6F3CC3;
+  --green-light: #BFE3D0;
+  --green-base: #479C6E;
+  --green-dark: #2D6C4A;
+  --danger: #C2464D;
+  background-color: var(--gray-100);
+}
+
+header {
+  width: 100%;
+  height: 200px;
+  background-color: var(--gray-330);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--green-base);
+}
+
+header span {
+  color: var(--purple-base);
+}
+
+.add {
+  display: flex;
+  justify-content: center;
+  transform: translateY(-50%);
+}
+
+.add form {
+  width: 800px;
+  display: flex;
+  height: 60px;
+  gap: 10px;
+  margin: 0px 10px;
+}
+
+.add form input[type="text"] {
+  font-size: 16px;
+  line-height: 140%;
+  border: 2px solid var(--gray-330);
+  border-radius: 10px;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--gray-100);
+  transition: .2s;
+}
+
+.add form input[type="text"]:focus {
+  border: 2px solid var(--purple-dark);
+  caret-color: var(--purple-dark);
+}
+
+.add form button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  line-height: 140%;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 19px 28px;
+  background-color: var(--purple-dark);
+  transition: .5s;
+}
+
+.add form button:hover {
+  background-color: var(--purple-base);
+}
+
+.add form button i {
+  margin-left: 8px;
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.main-tarefas .tarefas-criadas, .main-tarefas .tarefas-concluidas {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.main-tarefas .content {
+  display: flex;
+  justify-content: center;
+  gap: 550px;
+  flex-wrap: nowrap;
+  margin: 25px;
+  margin-top: 50px;
+  color: var(--gray-500);
+  font-size: 14px;
+  line-height: 120%;
+  font-weight: 550;
+}
+
+#criadas-nome {
+  white-space: nowrap;
+}
+
+#qntd-tarefas {
+  background-color: var(--purple-light);
+  color: var(--purple-dark);
+  padding: 5px 10px;
+  border-radius: 50%;
+}
+
+#qntd-concluidas {
+  background-color: var(--green-light);
+  color: var(--green-dark);
+  padding: 5px 10px;
+  border-radius: 50%;
+}
+
+.horizontal-line {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+hr {
+  width: 800px;
+  height: 2px;
+  border: none;
+  background-color: var(--gray-200);
+}
+
+.tarefas .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.tarefas ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.tarefas ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 140%;
+  background-color: var(--gray-330);
+  width: 40%;
+  padding: 20px;
+  border: 2px solid var(--gray-400);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  transition: .5s;
+}
+
+.tarefas input[type="checkbox"] {
+  flex-shrink:  0;
+  height: 22px;
+  width: 22px;
+  appearance: none;
+  border: 2px solid var(--purple-base);
+  border-radius: 100%;
+  cursor: pointer;
+  position: relative;
+  transition: .5s;
+}
+
+.tarefas input[type="checkbox"]:hover {
+  background-color: var(--gray-400);
+}
+
+.tarefas input[type="checkbox"]:checked {
+  background-color: var(--green-base);
+  border: 2px solid var(--green-base);
+}
+
+.tarefas input[type="checkbox"]:checked::after {
+  content: '';
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  transform: rotate(45deg);
+}
+
+.tarefas input[type="checkbox"]:checked:hover {
+  background-color: var(--green-dark);
+  border: 2px solid var(--green-dark);
+}
+
+.tarefas ul li:hover {
+  background-color: var(--gray-200);
+}
+
+.tarefas ul li:has(input[type="checkbox"]:checked) {
+  background-color: var(--gray-100);
+}
+
+.tarefas ul li:has(input[type="checkbox"]:checked) p {
+  text-decoration: line-through;
+  color: var(--gray-500);
+}
+
+.tarefas ul li:has(input[type="checkbox"]:checked):hover {
+  background-color: var(--gray-200);
+}
+
+.tarefas ul li:has(input[type="checkbox"]:checked):hover input[type="checkbox"] {
+  background-color: var(--green-dark);
+  border: 2px solid var(--green-dark);
+}
+
+.tarefas ul li p {
+  flex-grow: 1;
+}
+
+.tarefas .ph-trash {
+  font-size: 20px;
+  color: var(--gray-500);
+  padding: 5px;
+  border-radius: 20%;
+  transition: .5s;
+}
+
+
+.tarefas .ph-trash:hover {
+  color: var(--danger);
+  background-color: var(--gray-400);
+}
+
+.tarefas {
+  display: none;
+}
+
+.sem-tarefas .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.sem-tarefas .content .ph {
+  font-size: 48px;
+  color: var(--purple-light);
+  margin-bottom: 20px;
+}
+
+.sem-tarefas .content p {
+  font-size: 14px;
+  line-height: 140%;
+  color: var(--gray-500);
+}
+
+.sem-tarefas .content span {
+  line-height: 120%;
+  font-weight: bold;
+}
+
+.placeholder-error::placeholder {
+  color: var(--danger);
+}
+
+main {
+  margin-bottom: 200px;
+}
+
+@media screen and (max-width: 850px) {
+  .main-tarefas .content {
+    gap: 60%;
+  }
+  hr {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .main-tarefas .content {
+    gap: 55%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main-tarefas .content {
+    gap: 50%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .main-tarefas .content {
+    gap: 45%;
+  }
+
+  .add #form button .btn-text {
+    display: none;
+  }
+
+  .add #form button {
+    padding: 20px;
+  }
+
+  .add #form button i {
+    font-size: 1.5rem;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main-tarefas .content {
+    gap: 40%;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .main-tarefas .content {
+    gap: 35%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .main-tarefas .content {
+    gap: 30%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .main-tarefas .content {
+    gap: 20%;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .main-tarefas .content {
+    gap: 15%;
+  }
+
+  
+}
